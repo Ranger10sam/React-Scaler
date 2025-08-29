@@ -6,11 +6,12 @@
     <title>Document</title>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
     <div id="root"></div>
 </body>
-<script>
+<script type="text/babel">
     
     const root = document.getElementById("root");
 
@@ -23,7 +24,7 @@
 
 
     //using React
-
+    /* 
     const headingElement = React.createElement(
         'h1', 
         {
@@ -35,8 +36,40 @@
         'Hello World'
     ); 
     //type, props, children
+    ReactDOM.render(headingElement, root); 
+    */
 
-    ReactDOM.render(headingElement, root);
+
+    //using JSX
+
+    //components
+    function App(){
+        return(
+        <div>
+            <h1>Hello World</h1>
+            <div>
+                <Navbar/>
+            </div>
+        </div>
+        )
+    }
+
+    ReactDOM.render(<App/>, root);
+
+
+
+    function Navbar(){
+        return (
+        <div>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+            </ul>
+        </div>
+        )
+    }
 
 </script>
 </html>
