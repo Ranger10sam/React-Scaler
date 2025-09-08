@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import './Counter.css'
+import { useEffect } from 'react'
 
 const Counter = () => {
   const [count, setCount] = useState(0)
@@ -16,6 +17,10 @@ const Counter = () => {
   function reset(){
     setCount(0)
   }
+
+  useEffect(()=>{
+    document.title = `Clicked ${count} times`
+  })
 
   return (
     <>
